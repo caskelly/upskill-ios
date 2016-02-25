@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let url = NSURL (string: "http://upskill.us");
+        let requestObj = NSURLRequest(URL: url!);
+                
+        webView.loadRequest(requestObj);
+        webView.scrollView.bounces = false;
+        webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+ 
+        webView.opaque = true;
+        webView.backgroundColor = UIColor.blackColor();
     }
 
     override func didReceiveMemoryWarning() {
